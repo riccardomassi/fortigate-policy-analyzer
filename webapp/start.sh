@@ -6,7 +6,7 @@ echo "================================================"
 # Start Backend API
 echo "[1/2] Starting Flask backend on http://localhost:5000..."
 cd backend
-python app.py &
+python3 app.py &
 BACKEND_PID=$!
 
 sleep 2

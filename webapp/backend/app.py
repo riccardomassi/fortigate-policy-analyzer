@@ -206,14 +206,10 @@ def request_entity_too_large(error):
     return jsonify({'error': f'File too large (max {MAX_FILE_SIZE // (1024*1024)}MB)'}), 413
 
 
-@app.before_first_request
-def init_app():
-    """Initialize application"""
+if __name__ == '__main__':
+    print("[*] Starting FortiGate Policy Analyzer Web API...")
+    # Initialize application - cleanup old files
     cleanup_old_files()
     print("[*] FortiGate Policy Analyzer Web API started")
     print(f"[*] Upload folder: {UPLOAD_FOLDER}")
-
-
-if __name__ == '__main__':
-    print("[*] Starting FortiGate Policy Analyzer Web API...")
     app.run(debug=True, host='0.0.0.0', port=5000)
