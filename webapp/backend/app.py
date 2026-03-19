@@ -19,7 +19,9 @@ import sys
 from datetime import datetime
 
 # Configuration
-UPLOAD_FOLDER = '/Users/riccardovem/Project-Fortinet/webapp/uploads'
+# Use environment variable or default to relative path
+BASE_DIR = Path(__file__).resolve().parent.parent
+UPLOAD_FOLDER = os.environ.get('UPLOAD_FOLDER', str(BASE_DIR / 'uploads'))
 ALLOWED_EXTENSIONS = {'conf'}
 MAX_FILE_SIZE = 50 * 1024 * 1024  # 50MB
 
@@ -122,7 +124,7 @@ def analyze_file():
         analyze_all = data.get('analyze_all', False)
 
         # Build analyzer command
-        analyzer_script = '/Users/riccardovem/Project-Fortinet/fortigate_policy_analyzer.py'
+        analyzer_script = os.environ.get('ANALYZER_PATH', str(BASE_DIR.parent / 'fortigate_policy_analyzer.py'))
         cmd = [sys.executable, analyzer_script, '--conf', filepath, '--format', 'json']
 
         # Add parameters if provided
