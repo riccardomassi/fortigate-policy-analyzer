@@ -222,12 +222,14 @@ Key algorithms:
 - CORS support for frontend communication
 - Temporary file management with automatic cleanup
 - Integration with CLI analyzer via subprocess
+- Runs on port 8515 (non-conflicting across platforms)
 
 **Frontend (React SPA)**
 - Modern React functional components with hooks
 - Tailwind CSS for responsive styling
 - Real-time upload progress and analysis status
 - Interactive policy detail cards with issue descriptions
+- Proxy configuration to backend on port 8515
 
 **API Endpoints**
 
@@ -280,8 +282,8 @@ FLASK_ENV=development python backend/app.py
 ### Web Application Issues
 
 **Backend connection failed**
-- Ensure Flask server is running on port 5000
-- Check firewall isn't blocking localhost:5000
+- Ensure Flask server is running on port 8515
+- Check firewall isn't blocking localhost:8515
 
 **File upload fails**
 - Verify file is .conf format and under 50MB

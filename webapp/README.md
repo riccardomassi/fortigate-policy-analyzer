@@ -51,13 +51,14 @@ cd /Users/riccardovem/Project-Fortinet/webapp
 python backend/app.py
 ```
 
-The Flask API will start on http://localhost:5000
+The Flask API will start on http://localhost:8515
 
 You should see:
 ```
 [*] Starting FortiGate Policy Analyzer Web API...
 [*] FortiGate Policy Analyzer Web API started
 [*] Upload folder: /Users/riccardovem/Project-Fortinet/webapp/uploads
+[*] Backend running on http://localhost:8515
 ```
 
 ### Step 2: Start the Frontend
@@ -137,7 +138,7 @@ Click on policy cards to view detailed information. The app displays:
 
 ### Backend connection failed
 
-**Error**: "Backend connection failed. Please ensure the Flask server is running on port 5000."
+**Error**: "Backend connection failed. Please ensure the Flask server is running on port 8515."
 
 **Solution**: Make sure the Flask server is running in a separate terminal:
 ```bash

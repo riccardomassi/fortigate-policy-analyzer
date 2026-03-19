@@ -212,4 +212,5 @@ if __name__ == '__main__':
     cleanup_old_files()
     print("[*] FortiGate Policy Analyzer Web API started")
     print(f"[*] Upload folder: {UPLOAD_FOLDER}")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    print("[*] Backend running on http://localhost:8515")
+    app.run(debug=True, host='0.0.0.0', port=8515)
